@@ -17,3 +17,4 @@ csvファイルは[MLB公式のデータサイト](https://baseballsavant.mlb.co
 $ pipenv shell
 $ python app.py
 ```
+http://localhost:8000/docs でAPIのドキュメントを参照可能。
