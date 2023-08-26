@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.colors import cnames
+import math
 
-df = pd.read_csv("ShoheiOhtani_20230602_pitching_data.csv")
 
 plt.figure(figsize=(10, 10))
 plt.xlim(-60, 60)
@@ -12,12 +13,22 @@ class Analytics:
     def __init__(self, buffer):
         self.buffer = buffer
 
-    def get_analytiics_result(self):
+    def get_pitch_movement_data(self, csv_name):
+        """
+        csvファイルからボールの変化量のデータを抽出してグラフにし、画像として出力する関数
+        """
+        df = pd.read_csv(csv_name)
         pitch_types = ["4-Seam Fastball", "2-Seam Fastball", "Cutter", "Sinker", "Split-Finger", "Slow Curve", "Slider", "Curveball", "Sweeper", "Screwball"]
         colors = ["red", "brown", "orange", "aqua", "olive", "magenta", "lime", "pink", "purple", "navy", "gray", "silver", "tan", "peru"]
 
         s = set()
         for index, row in df.iterrows():
+            if row["pitch_name"] not in pitch_types:
+                pitch_types.append(row["pitch_name"])
+                for color in cnames.keys():
+                    if color not in colors:
+                        colors.append(color)
+                        break
             x = row["pfx_x"] * (-30.48)
             z = row["pfx_z"] * 30.48
             n = pitch_types.index(row["pitch_name"])

@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": ".venv/bin/python"
+    "python.pythonPath": ".venv/bin/python",
+    "files.autoSave": "afterDelay",
+    "python.venvPath": "/Users/shoya/projects/baseball-analytics/.venv"
 }
