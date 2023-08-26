@@ -9,6 +9,7 @@ numpy = "*"
 matplotlib = "*"
 fastapi = "*"
 uvicorn = "*"
+pybaseball = "*"
 
 [dev-packages]
 
