@@ -1,5 +1,22 @@
 {
     "python.pythonPath": ".venv/bin/python",
     "files.autoSave": "afterDelay",
-    "python.venvPath": "/Users/shoya/projects/baseball-analytics/.venv"
+    "python.venvPath": "/Users/shoya/projects/baseball-analytics/.venv",
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length",
+        "119",
+        "--ignore=E203,W503,W504"
+    ],
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "119"
+    ],
 }

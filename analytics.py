@@ -1,13 +1,11 @@
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 from matplotlib.colors import cnames
-import math
-
 
 plt.figure(figsize=(10, 10))
 plt.xlim(-60, 60)
 plt.ylim(-60, 60)
+
 
 class Analytics:
     def __init__(self, buffer):
@@ -18,8 +16,34 @@ class Analytics:
         csvファイルからボールの変化量のデータを抽出してグラフにし、画像として出力する関数
         """
         df = pd.read_csv(csv_name)
-        pitch_types = ["4-Seam Fastball", "2-Seam Fastball", "Cutter", "Sinker", "Split-Finger", "Slow Curve", "Slider", "Curveball", "Sweeper", "Screwball"]
-        colors = ["red", "brown", "orange", "aqua", "olive", "magenta", "lime", "pink", "purple", "navy", "gray", "silver", "tan", "peru"]
+        pitch_types = [
+            "4-Seam Fastball",
+            "2-Seam Fastball",
+            "Cutter",
+            "Sinker",
+            "Split-Finger",
+            "Slow Curve",
+            "Slider",
+            "Curveball",
+            "Sweeper",
+            "Screwball",
+        ]
+        colors = [
+            "red",
+            "brown",
+            "orange",
+            "aqua",
+            "olive",
+            "magenta",
+            "lime",
+            "pink",
+            "purple",
+            "navy",
+            "gray",
+            "silver",
+            "tan",
+            "peru",
+        ]
 
         s = set()
         for index, row in df.iterrows():
