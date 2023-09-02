@@ -1,4 +1,5 @@
-from pybaseball import statcast_pitcher, playerid_lookup
+from pybaseball import playerid_lookup, statcast_pitcher
+
 
 class DataCollector:
     def __init__(self, first_name, last_name, start_date, end_date):
@@ -27,5 +28,5 @@ class DataCollector:
         """
         stats = self._get_pitching_stats()
         csv_name = f"./csv_data/{self.player_name}_{self.start_date}_{self.end_date}_pitching_data.csv"
-        stats.to_csv(csv_name, index = False)
+        stats.to_csv(csv_name, index=False)
         return csv_name
